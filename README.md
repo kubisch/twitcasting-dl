@@ -18,14 +18,14 @@ If you know how to use your respective browser's developer console, you can find
 If you are not familiar with the above, then you can also do a simpler method. Open up your browser's developer console (F12 on Chrome, search up it's equivalent on your browser), and paste the following JavaScript code. It should return all the .m3u8 links you need.
 ### **Please do not paste random code into your developer console unless you understand it.**
 ```js
-let a=[];for(let _ of JSON.parse(document.querySelector("video")["dataset"]["moviePlaylist"]))a.push(_.source?.url);console.log(a.join("\n"))
+let a=[];for(let _ of JSON.parse(document.querySelector("video")["dataset"]["moviePlaylist"])[2])a.push(_.source?.url);console.log(a.join("\n"))
 ```
 Since it's dangerous to paste in code which you do not understand, I'll try to explain how this works.
 ```js
 let a=[]; // This initializes an empty list for use in the next line
 
 /* This line finds the element of the webpage that contains the list of links, and adds all of them to the list created above */
-for (let _ of JSON.parse(document.querySelector("video")["dataset"]["moviePlaylist"]))   
+for (let _ of JSON.parse(document.querySelector("video")["dataset"]["moviePlaylist"])[2])   
     a.push(_.source?.url);
 
 console.log(a.join("\n")) // This line prints out the contents of the list created in the first line, separated by a new line.
