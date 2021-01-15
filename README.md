@@ -40,13 +40,11 @@ Then, open up your command prompt (or terminal in the case of MacOS/Linux users)
 
 Once you have done that, you may proceed to download the videos. Assuming you have correctly cd-ed into the right folder, you can paste in this command.
 ```bat
-ffmpeg.exe -protocol_whitelist file,http,https,tcp,tls,crypto -i {link} -crf 18 -c copy {name}.mkv
+ffmpeg.exe -protocol_whitelist file,http,https,tcp,tls,crypto -i {link} -c copy {name}.mkv
 ```
 You need to replace {link} with one of the .m3u8 links you grabbed back in step 1, and you need to replace {name} with the name of the file you want it to be saved as. It will be saved to the bin subfolder of your FFmpeg folder.
 
 Importantly, note that the file extension of the saved file is .mkv. You cannot change this to .mp4 as the download will not work properly, but you may convert it to mp4 after it has finished downloading (_See bottom for FFmpeg command to convert .mkv to .mp4_)
-
-One more important thing to note, notice that the crf value (`-crf 18`) is 18 (default is 23). CRF is the quality of the resulting download. CRF 18 is my personal preference since it is considered 'visually lossless', but you may change it. Refer to [this page](https://trac.ffmpeg.org/wiki/Encode/H.264) from the official FFmpeg documentation to choose a CRF value, plus some extra information on the program. 
 
 Once you have completed all of this, your download should start. It will display quite a lot of text, but this is normal. If the text is either yellow or red, however, this means that a problem has occurred. Usually, the best course of action is to cancel the download (either close the command prompt or press _CTRL + C_) and restart it by retyping/pasting the command. While it is downloading, do not turn your computer off, and try not to do anything else while it is still running. Down the bottom of the command prompt, there should be a speed value, which looks like 1.234x. This means that for every second, FFmpeg is downloading 1.234 seconds of the video, and using some basic maths this will allow you to figure out how long the download will take. Please note that if your internet is not that strong it may take more than an hour for each hour-long part.
 
