@@ -48,14 +48,14 @@ Importantly, note that the file extension of the saved file is .mkv. You cannot 
 
 Once you have completed all of this, your download should start. It will display quite a lot of text, but this is normal. If the text is either yellow or red, however, this means that a problem has occurred. Usually, the best course of action is to cancel the download (either close the command prompt or press _CTRL + C_) and restart it by retyping/pasting the command. While it is downloading, do not turn your computer off, and try not to do anything else while it is still running. Down the bottom of the command prompt, there should be a speed value, which looks like 1.234x. This means that for every second, FFmpeg is downloading 1.234 seconds of the video, and using some basic maths this will allow you to figure out how long the download will take. Please note that if your internet is not that strong it may take more than an hour for each hour-long part.
 
+## What to do I do if this doesn't work?
+Please open an issue on this GitHub repo, since it's probably the best way of getting in contact with me. 
+
 ## Appendix A: Converting .mkv to .mp4
 Run the following command, replacing the words within the braces (braces = {}). Do not keep the braces.
 ```
 ffmpeg -i {input}.mkv -codec copy {output}.mp4
 ```
-
-## What to do I do if this doesn't work?
-Please open an issue on this GitHub repo, since it's probably the best way of getting in contact with me. 
 
 ## Appendix B: TwitCastDL batch file
 ### Credit to [kassarin](https://github.com/kassarin)
