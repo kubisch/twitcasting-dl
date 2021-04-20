@@ -2,7 +2,7 @@
 An explanation on how to download videos from the website 'twitcasting.tv' using FFmpeg
 
 # Introduction
-In the past (yesterday as of writing this), it was possible to download videos from Twitcasting by replacing parts of a link (http://dl01.twitcasting.tv/(id)/download/(number)?dl=1) with the corresponding video's channel and it's numerical ID. Unfortunately, it (as of today) has been patched and removed.   
+In the past, it was possible to download videos from Twitcasting by replacing parts of a link (http://dl01.twitcasting.tv/(id)/download/(number)?dl=1) with the corresponding video's channel and it's numerical ID. Unfortunately, it has been patched and removed.   
 
 Fortunately, there is another method that still works, and (most likely) will never be patched.
 
