@@ -1,10 +1,6 @@
 # Downloading from Twitcasting.tv
 An explanation on how to download videos from the website 'twitcasting.tv' using FFmpeg
 
-# Disclaimer
-## Unfortunately, as of 19/04/2021 the below method no longer works. This seems to be due to an update in the way twitcasting handles their m3u8 links, in which they generate a unique link for each new connection, and it can only be used for the one user agent. Most likely the workaround for this will be some sort of browser automation software (think selenium). As of writing this I am working on a program to do just this, but it will unfortunately take a while. Sorry for the inconvenience.
-# Disclaimer
-
 # Introduction
 In the past (yesterday as of writing this), it was possible to download videos from Twitcasting by replacing parts of a link (http://dl01.twitcasting.tv/(id)/download/(number)?dl=1) with the corresponding video's channel and it's numerical ID. Unfortunately, it (as of today) has been patched and removed.   
 
