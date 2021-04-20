@@ -47,7 +47,7 @@ Then, open up your command prompt (or terminal in the case of MacOS/Linux users)
 
 Once you have done that, you may proceed to download the videos. Assuming you have correctly cd-ed into the right folder, you can paste in this command.
 ```bat
-ffmpeg.exe -protocol_whitelist file,http,https,tcp,tls,crypto -user_agent "{User_Agent}" -headers "https://twitcasting.tv/" -headers "Origin: https://twitcasting.tv" -i {link} -c copy {name}.mkv
+ffmpeg.exe -protocol_whitelist file,http,https,tcp,tls,crypto -user_agent "{User_Agent}" -headers "Origin: https://twitcasting.tv" -i {link} -c copy {name}.mkv
 ```
 You'll need to replace the {User_Agent} with the one you found in step 2 (make sure to enclose it with double quotes "link this"). You need to replace {link} with one of the .m3u8 links you grabbed back in step 1, and you need to replace {name} with the name of the file you want it to be saved as. It will be saved to the bin subfolder of your FFmpeg folder. Don't use the same name for two different downloads or you could accidentally delete one of your previous downloads. 
 
