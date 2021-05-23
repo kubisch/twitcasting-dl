@@ -28,11 +28,18 @@ goto :start
 cls
 echo.
 echo.
-echo Paste the snippet below in the web console (F12 in Chrome):
+echo Paste the snippet below in the web console (F12 in Chrome) to get the TwitCast link:
+echo.
 echo let a=[];for(let _ of JSON.parse(document.querySelector("video")["dataset"]["moviePlaylist"])[2])a.push(_.source?.url);console.log(a.join("\n"))
+echo.
+echo --- 
 echo.
 echo Set TwitCast link:
 set /p FileLink=
+echo.
+echo.
+echo Set UserAgent:
+set /p UserA=
 echo.
 echo.
 echo Set file name:
@@ -44,10 +51,16 @@ echo File link cannot be empty!
 pause
 goto :start
 )
+if "%UserA%" == "" (
+echo Useragent cannot be empty!
+pause
+goto :start
+)
 if "%FileName%" == "" (
 set FileName = "TwitCastVideo" 
 )
 echo Link: %FileLink%
+echo Agent: %UserA%
 echo Name: %FileName%
 echo.
 echo Is this correct? (y/n)
@@ -60,10 +73,11 @@ goto :notfound
 cls
 echo.
 echo Twitcast Link: %FileLink%
+echo Useragent: %UserA%
 echo File Name: %FileName%
 echo.
 echo Downloading...
-ffmpeg.exe -protocol_whitelist file,http,https,tcp,tls,crypto -i %FileLink% -c copy %FileName%.mkv
+ffmpeg.exe -protocol_whitelist file,http,https,tcp,tls,crypto -user_agent "%UserA%" -headers "Origin: https://twitcasting.tv" -i %FileLink% -c copy %FileName%.mkv
 echo.
 echo.
 echo Executed. Please check the result.
