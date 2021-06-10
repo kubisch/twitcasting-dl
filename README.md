@@ -67,7 +67,6 @@ ffmpeg -i {input}.mkv -codec copy {output}.mp4
 ## Appendix B: TwitCastDL batch file
 ### Credit to [kassarin](https://github.com/kassarin)
 
-### Note this file has not been updated yet so it is currently not working.
 A batch file has been made to provide a streamlined download experience, please have FFMPEG installed and make sure ffmpeg.exe is in your PATH or else place the script in the same folder as the executable. Only tested on Windows 10.
 
 ```MD5: 8bc94a9c9d8017a958abbf21b75b5b0e```
